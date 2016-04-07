@@ -41,13 +41,15 @@ function activate(context) {
             var selection = editor.selection;
             var text = editor.document.getText(selection);
 
-            if (text.length === 0) {
+            if (text === undefined || text.length === 0) {
                 vscode.window.showInputBox('')
                 .then((data) => {
+                    
+                    if(data === undefined || data.length === 0) return;
+                    
                     bat.stdin.write(data + '\r\n');
                 });
             } else {
-                text = text.replace(/\r?\n|\r/g, ' ');
 
                 bat.stdin.write(text + '\r\n');
             }
