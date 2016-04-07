@@ -4,6 +4,7 @@ var vscode = require('vscode');
 var child_process = require('child_process');
 var exec = child_process.execFile;
 var spawn = child_process.spawn;
+var path = require('path');
 
 var outputChannel = null;
 var bat = null;
@@ -21,7 +22,8 @@ function activate(context) {
     }
 
     if (!bat) {
-        bat = spawn('cmd.exe');
+        bat = spawn('cmd.exe', { cwd : __dirname });
+        
         bat.stdout.on('data', (data) => {
             outputChannel.appendLine(data);
         });
