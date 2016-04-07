@@ -11,8 +11,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.execSelected",
-        "onCommand:extension.execAll"
+        "onCommand:extension.execSelected"
     ],
     "main": "./extension",
     "contributes": {
