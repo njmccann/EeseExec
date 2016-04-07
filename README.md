@@ -7,5 +7,4 @@ Two ways to execute commands
 
 The resulting output is sent to the Output window `Ctrl+Shift+U` under the **EeseExec** context. All commands are sent to a single cmd instance so state is preserved (ie current working directory).
 
-![Example image](images/example1.png)
 ![Example image](images/example2.png)
